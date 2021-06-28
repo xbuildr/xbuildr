@@ -61,11 +61,19 @@
     ]
   },
   "prettier": "@1stg/prettier-config",
+  "renovate": {
+    "extends": [
+      "@1stg"
+    ]
+  },
   "typeCoverage": {
-    "atLeast": 99.04,
+    "atLeast": 100,
     "cache": true,
     "detail": true,
+    "ignoreAsAssertion": true,
     "ignoreCatch": true,
+    "ignoreNonNullAssertion": true,
+    "showRelativePath": true,
     "strict": true,
     "update": true
   }

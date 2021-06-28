@@ -9,12 +9,17 @@ import { EntryPoint, HtmlLoaderOptions, Loader } from './types'
 const { readFile } = fs.promises
 
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#JavaScript_types
-const VALID_SCRIPT_TYPE = new Set([
+const VALID_SCRIPT_TYPES = new Set([
   'application/javascript',
   'application/ecmascript',
   'text/javascript',
   'text/ecmascript',
+  'module',
 ])
+
+const VALID_LANGS = ['js', 'jsx', 'ts', 'tsx'] as const
+
+export type ValidLang = typeof VALID_LANGS[number]
 
 export class HtmlLoader implements Loader {
   constructor(private readonly options: HtmlLoaderOptions) {}
@@ -24,12 +29,15 @@ export class HtmlLoader implements Loader {
       .get()
       .reduce<EntryPoint[]>((entryPoints, el) => {
         const $el = $(el)
-        const type = $el.attr('type')
+
         const src = $el.attr('src')
+        const type = $el.attr('type')
+        const lang = $el.attr('lang')
 
         if (
           (!src && !$el.html()?.trim()) ||
-          (type && !VALID_SCRIPT_TYPE.has(type))
+          (type && !VALID_SCRIPT_TYPES.has(type)) ||
+          (lang && !VALID_LANGS.includes(lang as ValidLang))
         ) {
           return entryPoints
         }
@@ -44,7 +52,7 @@ export class HtmlLoader implements Loader {
                 stdin: {
                   contents: $el.html()!,
                   resolveDir: basePath,
-                  loader: 'tsx',
+                  loader: lang as ValidLang,
                 },
               },
           onBuilt(outputFilePath) {
@@ -93,7 +101,6 @@ export class HtmlLoader implements Loader {
         }
 
         if (serve) {
-          console.log(outputFiles)
           onBuilt(this.onServeLoad(outputFiles![0].text))
         } else {
           const outputEntries = Object.entries(metafile.outputs)

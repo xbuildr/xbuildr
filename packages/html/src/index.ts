@@ -8,12 +8,18 @@ const namespace = '@esbuilder/html'
 
 const html = ({
   esbuild = _esbuild,
+  entryNames,
   serve,
 }: HtmlPluginOptions = {}): Plugin => ({
   name: 'html',
   setup(build) {
+    if (entryNames === '[name]') {
+      console.error('`[name]` for `entryNames` can not work correctly for now')
+    }
+
     const loader = new HtmlLoader({
       esbuild,
+      entryNames,
       serve,
       initialOptions: build.initialOptions,
     })
