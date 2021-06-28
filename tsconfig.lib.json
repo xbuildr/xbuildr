@@ -1,0 +1,10 @@
+{
+  "extends": "@1stg/tsconfig/node",
+  "compilerOptions": {
+    "noImplicitOverride": true,
+    "paths": {
+      "@esbuilder/cli": ["./packages/cli/src"],
+      "@esbuilder/html": ["./packages/html/src"]
+    }
+  }
+}

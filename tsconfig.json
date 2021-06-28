@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.lib",
+  "references": [
+    {
+      "path": "packages/html"
+    }
+  ]
+}
