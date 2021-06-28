@@ -55,7 +55,7 @@ jobs:
         run: |
           yarn global add codecov codacy-coverage
           codecov
-          cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n esbuilder
+          # cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n esbuilder
         env:
           CI: 'true'
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}

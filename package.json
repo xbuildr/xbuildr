@@ -17,7 +17,7 @@
     "lint": "run-p lint:*",
     "lint:es": "eslint . --cache",
     "prepare": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
-    "prerelease": "yarn build",
+    "prerelease": "yarn build:lib",
     "release": "changeset publish",
     "test": "jest",
     "typecov": "type-coverage"
@@ -47,6 +47,7 @@
     "extends": "@1stg"
   },
   "eslintIgnore": [
+    "coverage",
     "docs",
     "packages/*/lib",
     "!.*.js"
