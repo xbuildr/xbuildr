@@ -1,0 +1,71 @@
+{
+  "name": "@rxts/esbuilder",
+  "version": "0.0.0",
+  "repository": "git@github.com:rx-ts/esbuilder.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "run-p build:*",
+    "build:app": "rimraf docs && esr scripts/app.ts",
+    "build:lib": "tsc -b && esr scripts/lib.ts",
+    "clean": "rimraf docs packages/*/{lib,*.tsbuildinfo}",
+    "dev": "nodemon",
+    "lint": "run-p lint:*",
+    "lint:es": "eslint . --cache",
+    "prepare": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
+    "prerelease": "yarn build",
+    "release": "changeset publish",
+    "test": "jest",
+    "typecov": "type-coverage"
+  },
+  "devDependencies": {
+    "@1stg/common-config": "^2.3.1",
+    "@changesets/changelog-github": "^0.4.0",
+    "@changesets/cli": "^2.16.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.12.0",
+    "consola": "^2.15.3",
+    "esbuild": "^0.12.11",
+    "esbuild-runner": "^2.2.0",
+    "jest": "^27.0.5",
+    "nodemon": "^2.0.7",
+    "type-coverage": "^2.18.0",
+    "typescript": "^4.3.4",
+    "vue": "^3.1.2"
+  },
+  "resolutions": {
+    "prettier": "^2.3.2"
+  },
+  "commitlint": {
+    "extends": "@1stg"
+  },
+  "eslintConfig": {
+    "extends": "@1stg"
+  },
+  "eslintIgnore": [
+    "docs",
+    "packages/*/lib",
+    "!.*.js"
+  ],
+  "nodemonConfig": {
+    "exec": "esr scripts/serve.ts",
+    "ext": "ts",
+    "watch": [
+      "scripts/serve.ts",
+      "packages/html/src"
+    ]
+  },
+  "prettier": "@1stg/prettier-config",
+  "typeCoverage": {
+    "atLeast": 99.04,
+    "cache": true,
+    "detail": true,
+    "ignoreCatch": true,
+    "strict": true,
+    "update": true
+  }
+}

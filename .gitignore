@@ -1,0 +1,6 @@
+*.log
+.*cache
+.type-coverage
+docs
+node_modules
+packages/*/lib
