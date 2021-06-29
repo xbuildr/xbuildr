@@ -14,6 +14,11 @@ export interface HtmlPluginOptions {
    * @default '[name].[hash]'
    */
   entryNames?: string
+  /**
+   * override the root level option
+   * @default '[name].[hash]'
+   */
+  assetNames?: string
 }
 
 export interface HtmlLoaderOptions extends HtmlPluginOptions {
@@ -39,3 +44,7 @@ export interface EntryPoint {
   loader?: EsBuildLoader
   onBuilt(outputFilePath: string): void
 }
+
+export type ValueOfSet<T extends Set<unknown>> = T extends Set<infer R>
+  ? R
+  : never
