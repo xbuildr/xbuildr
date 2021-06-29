@@ -4,12 +4,12 @@ import path from 'path'
 import cheerio, { CheerioAPI } from 'cheerio'
 import { OnLoadArgs } from 'esbuild'
 
-import { EntryPoint, HtmlLoaderOptions, Loader } from './types'
+import { EntryPoint, HtmlLoaderOptions, Loader, ValueOfSet } from './types'
 
 const { readFile } = fs.promises
 
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#JavaScript_types
-const VALID_SCRIPT_TYPES = new Set([
+export const VALID_SCRIPT_TYPES = new Set([
   'application/javascript',
   'application/ecmascript',
   'text/javascript',
@@ -17,9 +17,11 @@ const VALID_SCRIPT_TYPES = new Set([
   'module',
 ])
 
-const VALID_LANGS = ['js', 'jsx', 'ts', 'tsx'] as const
+export const VALID_LANGS = new Set(['js', 'jsx', 'ts', 'tsx'] as const)
 
-export type ValidLang = typeof VALID_LANGS[number]
+export type ValidLang = ValueOfSet<typeof VALID_LANGS>
+
+export const DEFAULT_NAMES = '[name].[hash]'
 
 export class HtmlLoader implements Loader {
   constructor(private readonly options: HtmlLoaderOptions) {}
@@ -37,7 +39,7 @@ export class HtmlLoader implements Loader {
         if (
           (!src && !$el.html()?.trim()) ||
           (type && !VALID_SCRIPT_TYPES.has(type)) ||
-          (lang && !VALID_LANGS.includes(lang as ValidLang))
+          (lang && !VALID_LANGS.has(lang as ValidLang))
         ) {
           return entryPoints
         }
@@ -55,8 +57,8 @@ export class HtmlLoader implements Loader {
                   loader: lang as ValidLang,
                 },
               },
-          onBuilt(outputFilePath) {
-            $(el).html('').attr('src', outputFilePath)
+          onBuilt(outfile) {
+            $(el).html('').attr('src', outfile)
           },
         })
 
@@ -74,22 +76,25 @@ export class HtmlLoader implements Loader {
     const basePath = path.dirname(filePath)
     const contents = await readFile(filePath, 'utf8')
 
-    const $ = cheerio.load(contents)
-
-    const entryPoints = this.loadScripts(basePath, $)
-
-    const { entryNames, esbuild, initialOptions, serve } = this.options
+    const { assetNames, entryNames, esbuild, initialOptions, serve } =
+      this.options
 
     const outdir =
       initialOptions.outdir ||
-      (initialOptions.outfile && path.basename(initialOptions.outfile))
+      (initialOptions.outfile && path.basename(initialOptions.outfile)) ||
+      ''
+
+    const $ = cheerio.load(contents)
+
+    const entryPoints = this.loadScripts(basePath, $)
 
     await Promise.all(
       entryPoints.map(async ({ options, onBuilt }) => {
         const { metafile, outputFiles } = await esbuild!.build({
           ...initialOptions,
           ...options,
-          entryNames: entryNames || '[name].[hash]',
+          assetNames: assetNames || DEFAULT_NAMES,
+          entryNames: entryNames || DEFAULT_NAMES,
           outdir,
           bundle: true,
           metafile: true,
@@ -101,23 +106,22 @@ export class HtmlLoader implements Loader {
         }
 
         if (serve) {
-          onBuilt(this.onServeLoad(outputFiles![0].text))
+          onBuilt(
+            this.onServeLoad(
+              outputFiles!.find(({ path }) => !path.endsWith('.map'))!.text,
+            ),
+          )
         } else {
-          const outputEntries = Object.entries(metafile.outputs)
-          const [outputFilePath] =
+          const outputEntries = Object.entries(metafile.outputs).filter(
+            ([outfile]) => !outfile.endsWith('.map'),
+          )
+          const [outfile] =
             (options.entryPoints &&
               outputEntries.find(([_, { entryPoint }]) =>
                 options.entryPoints.includes(path.resolve(entryPoint!)),
               )) ||
             outputEntries[0]
-          onBuilt(
-            outdir
-              ? outputFilePath.replace(
-                  new RegExp(`^${outdir}\\${path.sep}`),
-                  '',
-                )
-              : outputFilePath,
-          )
+          onBuilt(path.relative(outdir, outfile))
         }
       }),
     )
