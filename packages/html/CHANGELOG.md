@@ -1,5 +1,11 @@
 # @esbuilder/html
 
+## 0.0.3
+
+### Patch Changes
+
+- [#6](https://github.com/rx-ts/esbuilder/pull/6) [`983b651`](https://github.com/rx-ts/esbuilder/commit/983b651c9507bf935c4ca320183a6db03c0e6e5f) Thanks [@JounQin](https://github.com/JounQin)! - fix: enable compatibility with sourcemap enabled
+
 ## 0.0.2
 
 ### Patch Changes

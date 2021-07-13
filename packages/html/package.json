@@ -1,6 +1,6 @@
 {
   "name": "@esbuilder/html",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles.",
   "repository": "git+https://github.com/rx-ts/esbuilder.git",
