@@ -7,7 +7,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=v12.22.9"
+    "node": ">=v12.22.10"
   },
   "publishConfig": {
     "access": "public"
