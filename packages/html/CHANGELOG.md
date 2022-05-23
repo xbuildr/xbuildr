@@ -1,5 +1,11 @@
 # @esbuilder/html
 
+## 0.0.5
+
+### Patch Changes
+
+- [`539ed7b`](https://github.com/rx-ts/esbuilder/commit/539ed7b9961cb454a1f2f0d06f50d84c02fa7346) Thanks [@JounQin](https://github.com/JounQin)! - fix(peer): update peer esbuild version range
+
 ## 0.0.4
 
 ### Patch Changes
