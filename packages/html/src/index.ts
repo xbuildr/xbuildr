@@ -1,8 +1,8 @@
 import type { Plugin } from 'esbuild'
 import _esbuild from 'esbuild'
 
-import { HtmlPluginOptions } from './types'
 import { HtmlLoader } from './loader'
+import { HtmlPluginOptions } from './types'
 
 const namespace = '@esbuilder/html'
 

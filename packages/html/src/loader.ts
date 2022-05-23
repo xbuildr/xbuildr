@@ -1,5 +1,5 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
 
 import cheerio, { CheerioAPI } from 'cheerio'
 import { OnLoadArgs } from 'esbuild'
@@ -100,10 +100,6 @@ export class HtmlLoader implements Loader {
           metafile: true,
           write: !serve,
         })
-
-        if (!metafile) {
-          return
-        }
 
         if (serve) {
           onBuilt(

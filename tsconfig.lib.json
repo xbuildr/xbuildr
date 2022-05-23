@@ -1,7 +1,7 @@
 {
   "extends": "@1stg/tsconfig/node",
   "compilerOptions": {
-    "noImplicitOverride": true,
+    "module": "ESNext",
     "paths": {
       "@esbuilder/cli": ["./packages/cli/src"],
       "@esbuilder/html": ["./packages/html/src"]
