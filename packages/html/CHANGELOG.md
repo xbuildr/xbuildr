@@ -1,5 +1,11 @@
 # @esbuilder/html
 
+## 0.0.4
+
+### Patch Changes
+
+- [`0438212`](https://github.com/rx-ts/esbuilder/commit/04382129496eaa3906e3435513ec4c4b35fc0134) Thanks [@JounQin](https://github.com/JounQin)! - fix(types): add types field to exports
+
 ## 0.0.3
 
 ### Patch Changes
