@@ -20,7 +20,7 @@
   "es2015": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "peerDependencies": {
-    "esbuild": ">=0.12.0"
+    "esbuild": ">=0.14.39"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
