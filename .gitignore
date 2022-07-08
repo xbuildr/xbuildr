@@ -1,6 +1,7 @@
 *.log
 .*cache
 .type-coverage
+.vercel
 coverage
 docs
 node_modules
