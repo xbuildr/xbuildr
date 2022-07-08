@@ -1,6 +1,6 @@
 {
   "name": "@esbuilder/cli",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "All in esbuild as primary bundler because it's extremely fast",
   "repository": "git+https://github.com/rx-ts/esbuilder.git",
   "homepage": "https://github.com/rx-ts/esbuilder/blob/main/packages/cli",
