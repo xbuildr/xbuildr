@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "alias": [
+    "esbuilder.vercel.app"
+  ],
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

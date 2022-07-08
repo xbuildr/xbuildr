@@ -2,13 +2,13 @@
   "name": "@esbuilder/html",
   "version": "0.0.5",
   "type": "module",
-  "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles.",
+  "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles",
   "repository": "git+https://github.com/rx-ts/esbuilder.git",
   "homepage": "https://github.com/rx-ts/esbuilder/blob/main/packages/html",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "engines": {
-    "node": ">=12.20"
+    "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
   "main": "./lib/html.cjs",
   "module": "./lib/html.mjs",
@@ -20,10 +20,10 @@
   "es2015": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "peerDependencies": {
-    "esbuild": ">=0.12.0"
+    "esbuild": ">=0.14.42"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.11",
+    "cheerio": "^1.0.0-rc.12",
     "tslib": "^2.4.0"
   },
   "publishConfig": {

@@ -1,6 +1,10 @@
 {
-  "extends": "./tsconfig.lib",
+  "extends": "@1stg/tsconfig/node",
   "compilerOptions": {
-    "baseUrl": "."
-  }
+    "paths": {
+      "@esbuilder/cli": ["./packages/cli/src"],
+      "@esbuilder/html": ["./packages/html/src"]
+    }
+  },
+  "exclude": ["coverage", "docs", "packages/*/lib"]
 }

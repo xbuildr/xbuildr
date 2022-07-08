@@ -84,6 +84,7 @@ export class HtmlLoader implements Loader {
       (initialOptions.outfile && path.basename(initialOptions.outfile)) ||
       ''
 
+    // eslint-disable-next-line sonar/deprecation
     const $ = cheerio.load(contents)
 
     const entryPoints = this.loadScripts(basePath, $)
