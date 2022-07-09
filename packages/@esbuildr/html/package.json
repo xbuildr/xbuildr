@@ -1,10 +1,10 @@
 {
-  "name": "@esbuilder/html",
-  "version": "0.0.6",
+  "name": "@esbuildr/html",
+  "version": "0.0.0",
   "type": "module",
   "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles",
-  "repository": "git+https://github.com/rx-ts/esbuilder.git",
-  "homepage": "https://github.com/rx-ts/esbuilder/blob/main/packages/html",
+  "repository": "git+https://github.com/rx-ts/esbuildr.git",
+  "homepage": "https://github.com/rx-ts/esbuildr/blob/main/packages/@esbuildr/html",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
     "recipients": [
@@ -51,6 +51,9 @@
   },
   "es2015": "./lib/index.js",
   "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "peerDependencies": {
     "esbuild": ">=0.14.42"
   },

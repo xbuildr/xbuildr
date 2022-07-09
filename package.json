@@ -1,15 +1,17 @@
 {
-  "name": "@rxts/esbuilder",
+  "name": "@unts/esbuildr",
   "version": "0.0.0",
-  "repository": "git@github.com:rx-ts/esbuilder.git",
+  "repository": "git@github.com:un-ts/esbuildr.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/@esbuildr/*"
   ],
+  "packageManager": "yarn@1.22.19",
   "scripts": {
-    "build": "run-p build:*",
+    "build": "run-s build:lib build:app",
     "build:app": "rimraf docs && esr scripts/app.ts",
     "build:lib": "tsc -b && esr scripts/lib.ts",
     "clean": "rimraf docs packages/*/{lib,*.tsbuildinfo}",
@@ -23,7 +25,7 @@
     "serve": "sirv docs",
     "test": "jest",
     "typecov": "type-coverage",
-    "vercel-build": "yarn build:app"
+    "vercel-build": "yarn build"
   },
   "devDependencies": {
     "@1stg/common-config": "^6.0.0",
@@ -59,7 +61,7 @@
   "eslintIgnore": [
     "coverage",
     "docs",
-    "packages/*/lib",
+    "packages/**/lib",
     "!/.*.js"
   ],
   "jest": {

@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "rx-ts/esbuilder"
+      "repo": "un-ts/esbuildr"
     }
   ],
   "commit": false,

@@ -1,10 +1,10 @@
-# esbuilder
+# esbuildr
 
-[![GitHub Actions](https://github.com/un-ts/esbuilder/workflows/CI/badge.svg)](https://github.com/un-ts/esbuilder/actions/workflows/ci.yml)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/un-ts/esbuilder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/un-ts/esbuilder/context:javascript)
-[![Codecov](https://img.shields.io/codecov/c/gh/un-ts/esbuilder)](https://codecov.io/gh/un-ts/esbuilder)
-[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fun-ts%2Fesbuilder%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
-[![GitHub release](https://img.shields.io/github/release/un-ts/esbuilder)](https://github.com/un-ts/esbuilder/releases)
+[![GitHub Actions](https://github.com/un-ts/esbuildr/workflows/CI/badge.svg)](https://github.com/un-ts/esbuildr/actions/workflows/ci.yml)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/un-ts/esbuildr.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/un-ts/esbuildr/context:javascript)
+[![Codecov](https://img.shields.io/codecov/c/gh/un-ts/esbuildr)](https://codecov.io/gh/un-ts/esbuildr)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fun-ts%2Fesbuildr%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
+[![GitHub release](https://img.shields.io/github/release/un-ts/esbuildr)](https://github.com/un-ts/esbuildr/releases)
 
 [![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)
@@ -18,9 +18,10 @@
 
 This repository is a monorepo managed by [changesets][] what means we actually publish several packages to npm from same codebase, including:
 
-| Package                             | Description                                                                 | Version                                                                                                   |
-| ----------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| [`@esbuilder/html`](/packages/html) | Plugin that simplifies creation of HTML files to serve your esbuild bundles | [![npm](https://img.shields.io/npm/v/@esbuilder/html.svg)](https://www.npmjs.com/package/@esbuilder/html) |
+| Package                                      | Description                                                                 | Version                                                                                                 |
+| -------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| [`@esbuildr/html`](/packages/@esbuildr/html) | Plugin that simplifies creation of HTML files to serve your esbuild bundles | [![npm](https://img.shields.io/npm/v/@esbuildr/html.svg)](https://www.npmjs.com/package/@esbuildr/html) |
+| [`esbuildr`](/packages/esbuildr)             | All in esbuild as primary bundler because it's extremely fast               | [![npm](https://img.shields.io/npm/v/esbuildr.svg)](https://www.npmjs.com/package/esbuildr)             |
 
 ## Sponsors
 

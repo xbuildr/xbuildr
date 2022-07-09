@@ -21,21 +21,14 @@ jobs:
       - name: Setup Node.js ${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
-          cache: yarn
           node-version: ${{ matrix.node }}
-
-      - name: Link Yarn global binaries into PATH
-        run: echo "$(yarn global bin)" >> $GITHUB_PATH
+          cache: yarn
 
       - name: Install Dependencies
         run: yarn --frozen-lockfile
 
-      - name: Build, Lint and test
-        run: |
-          yarn build
-          yarn lint
-          yarn test
-          yarn typecov
+      - name: Build, Lint and Test
+        run: yarn run-s build lint test typecov
         env:
           EFF_NO_LINK_RULES: true
           PARSER_NO_WATCH: true

@@ -1,9 +1,9 @@
 {
-  "name": "@esbuilder/cli",
-  "version": "0.0.1",
+  "name": "esbuildr",
+  "version": "0.0.0",
   "description": "All in esbuild as primary bundler because it's extremely fast",
-  "repository": "git+https://github.com/rx-ts/esbuilder.git",
-  "homepage": "https://github.com/rx-ts/esbuilder/blob/main/packages/cli",
+  "repository": "git+https://github.com/rx-ts/esbuildr.git",
+  "homepage": "https://github.com/rx-ts/esbuildr/blob/main/packages/esbuildr",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
     "recipients": [
@@ -41,6 +41,9 @@
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
     "access": "public"
   }
