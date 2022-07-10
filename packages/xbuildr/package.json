@@ -1,10 +1,9 @@
 {
-  "name": "@esbuildr/html",
+  "name": "xbuildr",
   "version": "0.0.0",
-  "type": "module",
-  "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles",
-  "repository": "git+https://github.com/rx-ts/esbuildr.git",
-  "homepage": "https://github.com/rx-ts/esbuildr/blob/main/packages/@esbuildr/html",
+  "description": "All in esbuild as primary bundler because it's extremely fast",
+  "repository": "git+https://github.com/rx-ts/xbuildr.git",
+  "homepage": "https://github.com/rx-ts/xbuildr/blob/main/packages/xbuildr",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "donate": {
     "recipients": [
@@ -42,25 +41,9 @@
   "engines": {
     "node": "^12.20.0 || ^14.18.0 || >=16.0.0"
   },
-  "main": "./lib/html.cjs",
-  "module": "./lib/html.mjs",
-  "exports": {
-    "types": "./lib/index.d.ts",
-    "import": "./lib/html.mjs",
-    "require": "./lib/html.cjs"
-  },
-  "es2015": "./lib/index.js",
-  "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
-  "peerDependencies": {
-    "esbuild": ">=0.14.42"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "tslib": "^2.4.0"
-  },
   "publishConfig": {
     "access": "public"
   }

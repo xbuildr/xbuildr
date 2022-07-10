@@ -2,7 +2,7 @@ import { build } from 'esbuild'
 
 import { COMMON_BUILD_OPTIONS } from './utils'
 
-import { html } from '@esbuildr/html'
+import { html } from '@xbuildr/html'
 
 const main = async () => {
   await build({
