@@ -1,10 +1,10 @@
 # xbuildr
 
-[![GitHub Actions](https://github.com/un-ts/xbuildr/workflows/CI/badge.svg)](https://github.com/un-ts/xbuildr/actions/workflows/ci.yml)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/un-ts/xbuildr.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/un-ts/xbuildr/context:javascript)
-[![Codecov](https://img.shields.io/codecov/c/gh/un-ts/xbuildr)](https://codecov.io/gh/un-ts/xbuildr)
-[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fun-ts%2Fesbuildr%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
-[![GitHub release](https://img.shields.io/github/release/un-ts/xbuildr)](https://github.com/un-ts/xbuildr/releases)
+[![GitHub Actions](https://github.com/xbuildr/xbuildr/workflows/CI/badge.svg)](https://github.com/xbuildr/xbuildr/actions/workflows/ci.yml)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/xbuildr/xbuildr.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/xbuildr/xbuildr/context:javascript)
+[![Codecov](https://img.shields.io/codecov/c/gh/xbuildr/xbuildr)](https://codecov.io/gh/xbuildr/xbuildr)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fxbuildr%2Fxbuildr%2Fmain%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
+[![GitHub release](https://img.shields.io/github/release/xbuildr/xbuildr)](https://github.com/xbuildr/xbuildr/releases)
 
 [![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com)

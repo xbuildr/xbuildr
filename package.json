@@ -1,7 +1,7 @@
 {
-  "name": "@unts/xbuildr",
+  "name": "@xbuildr/xbuildr",
   "version": "0.0.0",
-  "repository": "git@github.com:un-ts/xbuildr.git",
+  "repository": "git@github.com:xbuildr/xbuildr.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "private": true,
