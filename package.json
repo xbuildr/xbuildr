@@ -1,13 +1,13 @@
 {
-  "name": "@unts/esbuildr",
+  "name": "@unts/xbuildr",
   "version": "0.0.0",
-  "repository": "git@github.com:un-ts/esbuildr.git",
+  "repository": "git@github.com:un-ts/xbuildr.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
   "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*",
-    "packages/@esbuildr/*"
+    "packages/@xbuildr/*"
   ],
   "packageManager": "yarn@1.22.19",
   "scripts": {
@@ -79,6 +79,11 @@
     ]
   },
   "prettier": "@1stg/prettier-config",
+  "remarkConfig": {
+    "plugins": [
+      "@1stg/remark-config"
+    ]
+  },
   "renovate": {
     "extends": [
       "@1stg"

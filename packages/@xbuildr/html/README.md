@@ -1,13 +1,87 @@
-# @esbuildr/cli
-
-All in esbuild as primary bundler because it's extremely fast
+<div align="center">
+  <img width="200" height="200" src="https://worldvectorlogo.com/logos/html5.svg">
+  <a href="https://github.com/evanw/esbuild">
+    <img width="200" height="200"
+      src="https://esbuild.github.io/favicon.svg">
+  </a>
+  <h1>esbuild HTML Plugin</h1>
+  <p>Plugin that simplifies creation of HTML files to serve your esbuild bundles.</p>
+</div>
 
 ## TOC <!-- omit in toc -->
 
+- [Usage](#usage)
+  - [Install](#install)
+  - [API](#api)
 - [Sponsors](#sponsors)
 - [Backers](#backers)
 - [Changelog](#changelog)
 - [License](#license)
+
+## Usage
+
+### Install
+
+```sh
+# yarn
+yarn add -D esbuild @xbuildr/html
+
+# npm
+npm install -D esbuild @xbuildr/html
+```
+
+### API
+
+```ts
+import esbuild from 'esbuild'
+import { html } from '@xbuildr/html'
+
+// serve mode
+await esbuild.serve(
+  {},
+  {
+    entryPoints: ['src/index.html'],
+    plugins: [
+      html({
+        // required in serve mode
+        serve: true,
+        /**
+         * Output filename pattern for `src` attribute in `script` tag,
+         * the default value is `[name].[hash]`,
+         * you can override it here.
+         */
+        // entryNames: 'js/[name]',
+      }),
+    ],
+    outdir: 'dist',
+    /**
+     * required for keeping `dist/index.html` instead of `dist/index.{hash}.html`
+     */
+    assetNames: ['[name]'],
+  },
+)
+
+// build mode
+await esbuild.build({
+  entryPoints: ['src/index.html'],
+  plugins: [html()],
+  outdir: 'dist',
+  assetNames: ['[name]'],
+})
+```
+
+```html
+<!-- src/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- ... -->
+  </head>
+  <body>
+    <script src="index.ts"></script>
+  </body>
+</html>
+```
 
 ## Sponsors
 

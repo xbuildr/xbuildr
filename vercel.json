@@ -2,7 +2,8 @@
   "version": 2,
   "alias": [
     "esbuilder.vercel.app",
-    "esbuildr.vercel.app"
+    "esbuildr.vercel.app",
+    "xbuildr.vercel.app"
   ],
   "github": {
     "silent": true

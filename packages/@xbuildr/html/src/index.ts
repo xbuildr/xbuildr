@@ -4,7 +4,7 @@ import _esbuild from 'esbuild'
 import { HtmlLoader } from './loader'
 import { HtmlPluginOptions } from './types'
 
-const namespace = '@esbuildr/html'
+const namespace = '@xbuildr/html'
 
 const html = ({
   esbuild = _esbuild,

@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base",
   "references": [
     {
-      "path": "./packages/@esbuildr/html"
+      "path": "./packages/@xbuildr/html"
     }
   ]
 }

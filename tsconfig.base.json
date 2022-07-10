@@ -2,8 +2,8 @@
   "extends": "@1stg/tsconfig/node",
   "compilerOptions": {
     "paths": {
-      "@esbuildr/html": ["./packages/@esbuildr/html/src"],
-      "esbuildr": ["./packages/esbuildr/src"]
+      "@xbuildr/html": ["./packages/@xbuildr/html/src"],
+      "xbuildr": ["./packages/xbuildr/src"]
     }
   },
   "exclude": ["coverage", "docs", "packages/**/lib"]
