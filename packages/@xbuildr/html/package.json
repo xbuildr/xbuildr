@@ -55,7 +55,7 @@
     "lib"
   ],
   "peerDependencies": {
-    "esbuild": ">=0.14.42"
+    "esbuild": ">=0.15.1"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
