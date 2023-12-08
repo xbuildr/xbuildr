@@ -3,40 +3,9 @@
   "version": "0.0.0",
   "type": "module",
   "description": "Plugin that simplifies creation of HTML files to serve your esbuild bundles",
-  "repository": "git+https://github.com/rx-ts/xbuildr.git",
-  "homepage": "https://github.com/rx-ts/xbuildr/blob/main/packages/@xbuildr/html",
+  "repository": "git+https://github.com/xbuildr/xbuildr.git",
+  "homepage": "https://github.com/xbuildr/xbuildr/blob/main/packages/@xbuildr/html",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
-  "donate": {
-    "recipients": [
-      {
-        "name": "unts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/unts",
-        "weight": 60
-      },
-      {
-        "name": "rxts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/rxts",
-        "weight": 20
-      },
-      {
-        "name": "1stG",
-        "email": "i@1stg.me",
-        "weight": 20,
-        "platforms": [
-          {
-            "platform": "opencollective",
-            "address": "https://opencollective.com/1stG"
-          },
-          {
-            "platform": "patreon",
-            "address": "https://www.patreon.com/1stG"
-          }
-        ]
-      }
-    ]
-  },
   "funding": "https://opencollective.com/unts",
   "license": "MIT",
   "engines": {

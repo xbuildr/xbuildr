@@ -13,6 +13,7 @@ jobs:
           - 14
           - 16
           - 18
+          - 20
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -25,7 +26,7 @@ jobs:
           cache: yarn
 
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --frozen-lockfile --ignore-engines
 
       - name: Build, Lint and Test
         run: yarn run-s build lint test typecov
