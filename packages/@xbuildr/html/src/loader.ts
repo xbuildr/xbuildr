@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
-import cheerio, { CheerioAPI } from 'cheerio'
+import * as cheerio from 'cheerio'
+import type { CheerioAPI } from 'cheerio'
 import { OnLoadArgs } from 'esbuild'
 
 import { EntryPoint, HtmlLoaderOptions, Loader, ValueOfSet } from './types'
@@ -84,7 +85,6 @@ export class HtmlLoader implements Loader {
       (initialOptions.outfile && path.basename(initialOptions.outfile)) ||
       ''
 
-    // eslint-disable-next-line sonar/deprecation
     const $ = cheerio.load(contents)
 
     const entryPoints = this.loadScripts(basePath, $)
