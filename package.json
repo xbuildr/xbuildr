@@ -32,7 +32,7 @@
     "@changesets/changelog-github": "^0.4.6",
     "@changesets/cli": "^2.24.2",
     "@types/jest": "^28.1.6",
-    "@types/node": "^18.7.1",
+    "@types/node": "^18.19.83",
     "consola": "^2.15.3",
     "esbuild": "^0.15.1",
     "esbuild-runner": "^2.2.1",
